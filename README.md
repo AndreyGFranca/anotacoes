@@ -9,4 +9,6 @@
 	- Grafos
 * Algorítmos
 * Física Estatística
-   
+* Cálculo
+* Algebra Linear
+* Geometria Analítica
