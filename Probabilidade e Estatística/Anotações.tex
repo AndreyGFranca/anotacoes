@@ -1,0 +1,166 @@
+\documentclass[10pt,a4paper]{article}
+
+\input{../header}
+
+\title{Anotações Probabilidade e Estatística}
+
+
+\begin{document}
+\maketitle
+\small
+\section{Espaço Amostral}
+\begin{mdframed}[linewidth=0.6pt]
+\textbf{Remark}\\
+	Chamamos de espaço amostral, e indicamos por $\Omega$, um conjunto formado por todos os
+	resultados possíveis de um experiemento aleatório.
+\end{mdframed}
+
+\begin{eg}
+	Um experimento jogar um \textit{dado} tem seis resultados possíveis: 1, 2, 3, 4, 5, 6. Logo, o espaço amostral é $\Omega$ = $\lbrace1, 2, 3, 4, 5, 6\rbrace$.
+\end{eg}
+\begin{eg} 
+	Lançar uma moeda duas vezes e observar a sequência de caras e coroas.\\
+	$\Omega$ = $\lbrace (K,K), (K,C), (C,K), (C,C)\rbrace$.
+\end{eg}
+
+\subsection{Exercícios}
+Dar o Espaço Amostral para cada exercício abaixo:\\
+\paragraph{E1 - }Uma letra é escolhida entre as letras da palavra PROBABILIDADE.\\
+\textit{Sol. O espaço amostral é qualquer uma das letras da palavra. Portanto \\
+$\Omega = \lbrace P, R, O, B, I, L, D, A, E \rbrace$}
+
+\paragraph{E2 - }Três pessoas A, B, C são colocadas numa fila e observa-se a disposição das mesmas.\\
+\textit{Sol. $\Omega = \lbrace (CAB), (BCA), (ACB), (CBA), (BAC) \rbrace$}
+
+\section{Eventos}
+Consideremos um experimento aleatório, cujo espaço amostral é $\Omega$. Chamaremos de \textit{evento} todo subconjunto de $\Omega$. Em geral, indicamos um evento por uma letra maíuscula do alfabeto: A, B, C, D, ... X, Y, Z.
+
+\begin{eg} 
+	Um dado é lançado, e observa-se o número da face de cima.
+	$\Omega = \lbrace 1, 2, 3, 4, 5, 6 \rbrace$\\
+
+	Eis alguns eventos\\
+	A: Ocorrência de número ímpar. A = $\lbrace1, 3, 5 \rbrace$\\
+	B: Ocorrência de número primo. B = $\lbrace2, 3, 5$\\
+	C: Ocorrência de número menor que 4. C = $\lbrace1, 2, 3 \rbrace$\\
+\end{eg}
+\begin{eg}
+	Uma moeda é lançada 3 vezes, e observa-se a sequencia de caras e coroas.\\
+	A: ocorrência de cara no primeiro lançamento\\
+	A = $\lbrace(K,K,K), (K,C,K), (K,K,C), (K,C,K) \rbrace$
+\end{eg}
+
+\begin{mdframed}[linewidth=0.6pt]
+	\textbf{Remark}\\
+	Podemos, e devemos, realizar todas as operações de teoria dos conjuntos nos conjuntos formados 
+	pelos eventos. Isto é, união, intersecção, ou seja, existem eventos que acontecem se um 
+	\textsc{ou} outros ocorrerem, e se um \textsc{e} outro ocorrerem.
+\end{mdframed}
+
+\subsection{Exercícios}
+\paragraph{E1 - }Uma moeda e um dado são lançados. Seja\\
+$\Omega = \lbrace(K,1), (K,2),(K,3),(K,4),(K,5),(K,6)$\\
+$    (C,1),(C,2),(C,3),(C,4),(C,5),(C,6), \rbrace$\\
+Descreva os eventos:\\
+a)A: ocorre cara,\\
+b)B: ocorre número par,\\
+\textit{Sol. TRIVIAL}
+
+\section{Variável Aleatória}
+\paragraph{}Consideremos um experimento e $ \Omega $ o espaço amostral associado a esse experimento. Uma função X, que associa a cada elemento $ \omega \in \Omega $ um número real, $ X(\omega) $, é denominada variável aleatória (v.a.). Ou seja, variável aleatória é um característico numérico do resultado de um experimento.
+
+\section{Modelos Probabilísticos Discretos}
+\subsection{Ensaios de Bernoulli}
+\paragraph{}Cosidere um experimento que consiste em uma sequência de ensaios ou tentaticas independentes, isto é, ensaios nos quais o resultado de uma ensaio não depende dos ensaios anteriores e nem dos ensaios posteriores. Em cada ensaio, podem ocorrer apenas dois resultados. Um deles que chamamos de sucesso(S) e outros que chamamos de fracasso (F). A probabilidade de ocorrer Sucesso é sempre p, e a probabilidade de ocorrer fracasso é sempre q = 1 - p.
+\paragraph{}Para um experimento que consiste na realização de $ n $ ensaios independentes de Bernoulli, o espaço amostral pode ser considerado como o conjunto de n-uplas, em que cada posição há um sucesso (S) ou uma falha (F).
+\subsubsection{Exemplos de ensaios de Bernoulli}
+\paragraph{}1) Uma moeda é lançada 5 vezes. Cada lançamento é um ensaio, onde dois resultados podem ocorrer: cara ou coroa. Chamamos o Sucesso de cara, e o fracasso de coroa. Em cada ensaio p = $\frac{1}{2}$ e Fracasso q = $\frac{1}{2}$
+\subparagraph{}Neste exemplo sejam os eventos:\\
+$A_{1}$: ocorre cara no 1 lançamento, P($A_{1}$) = $\frac{1}{2}$\\
+$A_{2}$: ocorre cara no 2 lançamento, P($A_{2}$) = $\frac{1}{2}$.\\
+\vdots\\
+$A_{5}$: ocorre cara no 5 lançamento, P($A_{5}$) = $\frac{1}{2}$.\\
+\paragraph{} Então o evento $A_{1} \cap A_{2} \cap \cdots \cap A_{5}$ corresponde ao evento sair cara nos 5 lançamentos, que é $\lbrace(K, K, K, K, K) \rbrace$
+\subparagraph{}Como os 5 eventos são independentes, \\
+\[P(A_{1} \cap A_{2} \cap A_{3} \cap A_{4} \cap A_{5}) = \frac{1}{2} \cdot \frac{1}{2}\cdot \frac{1}{2} \cdot \frac{1}{2} \cdot \frac{1}{2} = \frac{1}{32}\] 
+\paragraph{}Vamos supor agora o evento de sair exatamente 1 cara, isto é
+\[\lbrace(K, C, C, C, C), (C, K, C, C, C), (C, C, K, C, C), (C, C, C, K, C), (C, C, C, C, K) \rbrace\]
+Portanto a probabilidade é:
+\[\frac{1}{32} + \frac{1}{32} + \frac{1}{32} + \frac{1}{32} + \frac{1}{32} = \frac{5}{32}\]
+Como podemos facilmente perceber isto é a permutação de 5 elementos com 4 repetidos.
+\begin{mdframed}[linewidth=0.6pt]
+	\textbf{Remark}\\
+	Dizemos que um evento A independe de B se:
+	\begin{center}
+		P(A$|$B) = P(A)
+	\end{center}
+	isto é:
+	\[P(A|B) = \frac{P(A \cap B)}{P(B)} = \frac{P(B) P(A|B)}{P(A)} = \frac{P(B)P(A)}{P(A)} = 
+	P(B)\]
+\end{mdframed}
+
+\paragraph{}Se quisermos agora calcular a probabilidade de sair exatamente duas caras, teremos de calcular o números de quintuplas ordenadas, onde existem duas caras (K) e três coroas:
+\[P^{2,3}_{5} = \frac{5!}{2!3!} = 10\]
+\subparagraph{}\textit{Obs:} Aqui calculamos exatamente 5 ensaios de Bernoulli.
+
+\subsection{Distribuição Binomial}
+
+\paragraph{}O que se conhece por Distribuição Binomial é justamente a generalização dos ensaios de Bernoulli. Vamos considerar uma sequencia de \textit{n} ensaios de Bernoulli. Seja \textit{p} a probabilidade de sucesso e \textit{q} a probabilidade de fracasso.
+\paragraph{} Queremos calcular a \emph{probabilidade de $P_{k}$, da ocorrência de exatamente K sucessos, nos n ensaios.}
+\paragraph{}O evento \textit{Ocorrem K sucessos nos n ensaios} é formado por todas as enuplas ordenadas onde existem K sucessos(S) e n - K fracassos(F). O número de enuplas ordenadas nesta condição é:
+\[
+	P^{K, n-K}_{n} = \frac{n!}{K!(n-K)!} = \binom{n}{K}
+\]
+\paragraph{}A probabilidade de cada enupla ordenada de K sucessos (S) e (n-K) Fracassos (F) é dada por:
+\[
+	\underbrace{p \cdot p \cdots p} \cdot \underbrace{q \cdot q \cdots q} = p^{K}\cdot q^{n-K}
+\]
+\paragraph{}Logo, se cada enupla ordenada com exatamente K sucessos tem probabilidade de $p^{K} \cdot q^{n-K}$ e existem $\binom{n}{K}$ enuplas desse tipo, a probabilidade $P_{K}$ de exatamente K sucessos nos n ensaios será:
+\[
+	P_{K} = \binom{n}{K} \cdot p^{K} \cdot q^{n-K}
+\]
+
+\begin{eg}
+	Um urna tem 4 bolas vermelhas (V) e 6 brancas (B). Uma bola é extraída, observa sua cor e reposta na urna. O experiemento é repetido 5 vezes. Qual a probabilidade de observarmos exatamente 3 vezes bola vermelha?
+	\paragraph{} Em cada ensaio, consideremos como Sucesso o resultado "bola vermelha", e Fracasso o resultado "bola branca". Então:
+	\[
+		p = \frac{4}{10} = \frac{2}{5}, q = \frac{6}{10} = \frac{3}{5}, n = 5.	
+	\]
+	Estamos interessados na probabilidade $P_{3}$. Temos:
+	
+	\[
+		P_{3} = \binom{5}{3}(\frac{2}{5})^{3} (\frac{2}{5})^{2} = \frac{5!}{3!2!} \cdot \frac{8}{125} \cdot \frac{9}{25} = \frac{725}{3125} \Rightarrow
+		P_{3} = 0,2304
+	\]
+\end{eg}
+
+\begin{eg}
+	Numa cidade, 10\% das pessoas possuem carro de marca A. Se 30 pessoas são selecionadas ao acaso, com reposição, qual a probabilidade de exatamente 5 pessoas possuírem carro da marca A ?
+	
+	Em cada escolha de uma pessoa, consideremos os resultados:\\
+	Sucesso: a pessoa tem carro da marca A.\\
+	Fracasso: a pessoa não tem carro da marca A\\
+	Então p = 0,1,    q = 0,9,    n = 30\\
+	Estamos interessados em $P_{5}$. Temos:
+	\[
+		P_{5} = \binom{30}{5}(0,1)^{5} \cdot (0,9)^{25} \simeq 0,102	
+	\]
+\end{eg}
+
+\subsubsection{Exercicios}
+\begin{ex}
+	Uma moeda é lançada 6 vezes. Qual a probabilidade de observarmos exatamente duas caras?
+\end{ex}
+\begin{sol}
+	Vamos considerar que sair cara é Sucesso e sair coroa é Fracasso. Então temos que \textit{p} = 2, \textit{q} = 4 e \textit{n} = 6, portanto:
+	\[
+		\begin{aligned}
+		P_{k} =& \binom{n}{K} \cdot p^{K} \cdot q^{n-K} =		\\
+		& \binom{6}{2} \cdot (\frac{1}{2})^{6} \cdot (\frac{1}{2})^{4} =\\
+		& \frac{6!}{2!4!} \cdot 0,15 \cdot 256=\\
+		& 15 \cdot 0,15 \cdot 0,065=\\
+		& \underline{0,14}
+		\end{aligned}
+	\]
+\end{sol}
+\end{document}

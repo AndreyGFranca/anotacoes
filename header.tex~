@@ -1,0 +1,14 @@
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mdframed}
+\usepackage{amsthm}
+\usepackage{setspace}
+\renewcommand{\baselinestretch}{0.7} 
+\usepackage[lastexercise]{exercise}
+
+\theoremstyle{definition}
+\newtheorem*{eg}{Exemplo}
+
+\author{Andrey França}
