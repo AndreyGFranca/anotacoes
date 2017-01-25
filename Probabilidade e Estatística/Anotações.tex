@@ -163,4 +163,99 @@ Como podemos facilmente perceber isto é a permutação de 5 elementos com 4 rep
 		\end{aligned}
 	\]
 \end{sol}
+
+\subsection{Distrubuição de Poisson}
+Em muitas situações nos deparamos com a situação em que o número de ensaios $ n $ é grande ($ n\rightarrow \infty $) e $ p $ é pequeno ($ p\rightarrow 0 $), no cálculo da função binomial, o que nos leva a algumas dificuldades, pois, como podemos analisar, para $ n $ muito grande e $ p $ pequeno, fica relativamente difícil calcularmos a probabilidade de $ k $ sucessos a partir do modelo binomial, isto é, utilizando a função de probabilidade
+
+\[p(k)=\mathbb{P}(X=k)=\left(\begin{array}{c}n\\k\end{array}\right)p^k(1-p)^{n-k}.\] 	
+
+Observamos que podemos reescrever a expressão acima da seguinte forma
+
+\[\mathbb{P}(X=k)=\frac{n!}{k!(n-k)!}p^k\frac{n^k}{n^k}\left(1-\frac{np}{n}\right)^{n-k}=\frac{n!}{k!(n-k)!}\frac{(np)^k}{n^k}\left(1-\frac{np}{n}\right)^{n-k}\] 	
+
+e, tomando $ \lambda = np $, segue que
+
+\[\mathbb{P}(X = k)=\frac{n(n-1)\cdots(n-k+1)}{k!}\frac{\lambda^k}{n^k}\left(1-\frac{\lambda}{n}\right)^{n-k}=\frac{\lambda^k}{k!}1\left(1-\frac{1}{n}\right)\dots\left(1-\frac{k-1}{n}\right)\left(1-\frac{\lambda}{n}\right)^{n-k}.\] 	
+
+Se tomarmos o limite quando $ n\rightarrow \infty $, obtemos que
+
+\[\lim_{n\rightarrow \infty}1\left(1-\frac{1}{n}\right)\dots\left(1-\frac{k-1}{n}\right)=1\] 	
+
+e
+
+\[\lim_{n\rightarrow \infty}\left(1-\frac{\lambda}{n}\right)^{n-k}=\lim_{n\rightarrow \infty}\left(1-\frac{\lambda}{n}\right)^{n}=e^{-\lambda}\] 	
+
+para $ k = 0,1,\ldots $ e $ e\approx 2,718 $.
+
+Assim temos que 
+
+\[\lim_{n\rightarrow \infty}\mathbb{P}(X=k)=\frac{e^{-\lambda}\lambda^k}{k!}.\] 	
+
+Tal expressão é devida a Poisson e é muito utilizada para calcular probabilidades de ocorrências de defeitos "raros" em sistemas e componentes.
+
+\begin{df}
+	Uma variável aleatória discreta $ X $ segue a distribuição de Poisson com parâmetro $ \lambda $, $ \lambda \ \textgreater 0 $, se sua função de probabilidade for dada por
+
+	\[\mathbb{P}(X=k)=\frac{e^{-\lambda}\lambda^k}{k!}.\] 	
+
+	Utilizamos a notação $ X \sim \ \text{Poisson}(\lambda) $ ou $ X\sim \ \text{Po}(\lambda) $. O parâmetro $ \lambda $ indica a taxa de ocorrência por unidade medida.
+\end{df}
+
+\begin{mdframed}[linewidth=0.6pt]
+\textbf{Remark}\\
+	Uma área de oportunidadeé uma unidade contínua ou um intervalo de tempo, volume ou uma área tal que nela possa acontecermais de uma ocorrência de um evento. Exemplos:
+	\begin{itemize}
+		\item Defeitos na pintura de uma geladeira nova
+		\item Número de falhas na rede em um determinado dia
+		\item Número de pulgas no pêlo de um cachorro\\
+	\end{itemize}
+	A distribuição de Poisson é aplicada quando:
+	\begin{itemize}  
+		\item Você estiver interessado em contar o número de vezes em que um 
+evento específico ocorre em uma determinada área de oportunidades. A área de oportunidades é definida pelo tempo, extensão, área de superfície e assim sucessivamente.
+		\item A probabilidade de que um evento específico ocorra em uma 
+determinada área de oportunidades é a mesma para todas as áreas 
+de oportunidades.
+		\item O número de eventos que ocorrem em uma determinada área de oportunidades é independente do número de eventos que ocorrem em qualquer outra área de oportunidades.
+		\item A probabilidade de que dois ou mais eventos venham a ocorrer em uma determinada área de oportunidades se arpoxima de zero à medida que a área de oportunidades se torna menor.
+	\end{itemize}
+
+\end{mdframed}
+
+\begin{eg}
+	Suponha que, em média, 5 carros entrem em um estacionamento por minuto. Qual é a probabilidade de que em um dado minuto, 7 carros entrem?
+\end{eg}
+\begin{sol}
+	Então, X = 7 e $\lambda$ = 5
+	
+	\[
+		P(7) = \frac{e^{-\lambda}\lambda^{X}}{X!}	= \frac{e^{-7}\lambda^{5}}{7!} = 0,104
+	\]	
+	Portanto, há uma probabilidade de 10,4\% de que 7 carros entrem no estacionamento em um dado minuto.
+\begin{flushright}
+$\blacksquare$
+\end{flushright}
+\end{sol}
+
+\begin{eg}
+	Sabe-se que o número de acidentes de trabalho, por mês, em uma unidade de produção segue uma distribuição de Poisson, com uma média aritmética de 2,5  acidentes de trabalho por mês.
+	\begin{itemize}
+		\item Qual é a probabilidade de que em um determinado mês nenhum acidente de trabalho venha a ocorrer?
+		\item De que pelo menos um acidente de trabalho venha a ocorrer?
+	\end{itemize}
+\end{eg}
+
+\begin{sol}
+	a) Com $\lambda$ = 2,5
+	\[
+		P(X = 0) = \frac{e^{-2,5}(2,5)^{0}}{0!} = \frac{1}{(2,71828)^{2,5}(1)} = 0,0821
+	\]
+	A probabildade de que em um determinado mês nenhum acidente de trabalho ocorra é 0,0821,  ou 8,21\%.\\\\
+	b) 
+	\[
+		P(C \geq 1) = 1 - P(X = 0) = 1 - 0,0821 = 0,9179
+	\]
+	A probabilidade de que em um determinado mês haverá pelo menos um acidente de trabalho é  0,9179, ou 91,79\%.
+\end{sol}
+
 \end{document}
