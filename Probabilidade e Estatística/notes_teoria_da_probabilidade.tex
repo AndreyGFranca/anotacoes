@@ -2,7 +2,7 @@
 
 \input{../header}
 
-\title{Anotações Probabilidade e Estatística}
+\title{Anotações Teoria da Probilidade}
 
 
 \begin{document}
@@ -252,7 +252,9 @@ $\blacksquare$
 	\[
 		P(X = 0) = \frac{e^{-2,5}(2,5)^{0}}{0!} = \frac{1}{(2,71828)^{2,5}(1)} = 0,0821
 	\]
-	A probabildade de que em um determinado mês nenhum acidente de trabalho ocorra é 0,0821,  ou 8,21\%.\\\\
+	A probabildade de que em um determinado mês nenhum acidente de trabalho ocorra é 0,0821,  ou 8,21\%.
+	
+	
 	b) 
 	\[
 		P(C \geq 1) = 1 - P(X = 0) = 1 - 0,0821 = 0,9179
@@ -264,7 +266,8 @@ $\blacksquare$
 	Um departamento de polícia recebe em média 5 solicitações por hora.  Qual  a  probabilidade  de  receber  2 solicitações numa hora selecionada aleatoriamente? 
 \end{ex}
 \begin{sol}
-	X = número designado de sucessos = 2 \\
+	X = número designado de sucessos = 2 
+	
 	$\lambda$ = o número médio de sucessos num intervalo específico (uma hora) = 5 
 	Então temos que:
 	\[P(2) = \frac{e^{-\lambda}\lambda^{X}}{X!}	= \frac{e^{-5}5^{2}}{2!} = 0,084\]
@@ -275,16 +278,100 @@ $\blacksquare$
 	\begin{itemize}
 		\item[a)] Qual é a probabilidade de 3 clientes pararem qualquer hora? 
 		\item[b)] Qual é a probabilidade de 3 clientes pararem qualquer hora? 
-		\item[c)] Qual é o valor esperado, a média, e o desvio padrão para esta distribuição? 
 	\end{itemize}
 \end{ex}
 \begin{sol}
 	\begin{itemize}
-		\item[a)]X = número designado de sucessos = 3 \\
+		\item[a)]X = número designado de sucessos = 3 
+		
 		$\lambda$ = o número médio de sucessos num intervalo específico (uma hora) = 6 
 		\[P(2) = \frac{e^{-\lambda}\lambda^{X}}{X!}	= \frac{e^{-6}6^{3}}{3!} = 0,089\]
 		\item[b)]P(X $\leq$ 3) = P(0) + P(1) + P(2) + P(3) 
+		
+		Assim, P(X $\leq$ 3) = 0,00248 + 0,01488 + 0,04464 + 0,08928 = 0,15128 
 	\end{itemize}
 \end{sol}
 
+\begin{ex}
+	Suponhamos que em uma indústria farmacêutica 0,001$\%$ de um determinado medicamento sai da linha de produção somente com o excipiente, ou seja, sem nenhum princípio ativo. Qual a probabilidade de que em uma amostra de 4 mil medicamentos mais de 2 deles esteja somente com o excipiente.
+\end{ex}
+\begin{sol}
+	Vamos calcular esta probabilidade usando a aproximação de poisson, pois além de ser uma aproximação muito boa neste caso é bem mais fácil de ser calculada.
+
+Para usarmos a distribuição de Poisson primeiramente devemos encontrar o $ \lambda $, o qual é dado por $ \lambda=n\times p=4000\times 0,00001=0,04 $. Assim
+
+\[\mathbb{P}(X\geq 2)=1-\mathbb{P}(X=0)-\mathbb{P}(X=1)=1-\displaystyle \frac{0,04^0e^{-0,04}}{0!}-\frac{0,04^1 e^{-0,04}}{1!}\approx 1-0,999221\approx 0,00078.\] 	
+
+Assim a probabilidade de que existam mais de 2 medicamentos com apenas o excipiente é de 0,078%.
+\end{sol}
+
+
+\subsection{Distrubuição Geométrica}
+\begin{quote}
+	Geométrica (conta o número ensaios para se obter um sucesso.)
+\end{quote}
+\begin{df}
+	Seja $ X $ a variável aleatória que fornece o número de falhas até o primeiro sucesso. A variável $ X $ tem distribuição Geométrica com parâmetro $ p $, $ 0 \ \textless \ p \ \textless \ 1 $, se sua função de probabilidade é dada por
+
+
+\[\mathbb{P}\left(X=j\right)=(1-p)^jp, \quad j=0,1,\ldots\] 	
+
+ 
+
+Usaremos a notação $ X \sim \ \text{Geo}(p) $.
+
+O evento $ [X=j] $ ocorre se, e somente se, ocorrem somente falhas nos $ j $ primeiros ensaios e sucesso no $ (j+1) $-ésimo ensaio.
+\end{df}
+
+\begin{eg}
+	Considere o experimento em que uma moeda viciada é lançada sucessivas vezes, até que ocorra a primeira cara. Seja $ X $ a variável aleatória que conta o número de coroas obtidos no experimento (ou seja, a quantidade de lançamentos anteriores a obtenção da primeira cara). Sabendo que a probabilidade de cara é de $ 0,4 $, qual é a probabilidade de $ \mathbb{P}(2\leq X\textless 4) $ e a probabilidade de $ \mathbb{P}(X\textgreater 1| X\leq 2) $.
+\end{eg}
+
+\begin{sol}
+Observamos que
+
+\[\mathbb{P}(2\leq X\textless 4)=\mathbb{P}(X=2)+\mathbb{P}(X=3)=0,6^2\cdot 0,4+0,6^3\cdot 0,4=0,2304.\] 	
+
+Vamos calcular agora $ \mathbb{P}(X\textgreater 1| X\leq 2) $.
+
+\[\mathbb{P}(X\textgreater 1| X\leq 2)=\frac{\mathbb{P}(X\textgreater 1\cap X\leq 2)}{\mathbb{P}(X\leq2)}=\frac{\mathbb{P}(X=2)}{\mathbb{P}(X=0)+\mathbb{P}(X=1)+\mathbb{P}(X=2)}=\frac{0,144}{0,784}=0,18367.\]
+\end{sol}
+
+\begin{eg}
+	Um dado honesto é lançado sucessivas vezes até que apareça pela primeira vez a face 1. Seja $ X $ a variável aleatória que conta o número de ensaios até que corra o primeiro $ 1 $. Qual a probabilidade de obtermos $ 1 $ no terceiro lançamento.
+\end{eg}
+\begin{sol}
+Como o dado é honesto, a probabilidade de, em um lançamento, obtermos qualquer face é igual a 1/6. Neste caso, a probabilidade de se obter a face $ 1 $ (sucesso) é $ 1/6 $ e a probabilidade de se obter qualquer outra face (fracasso) é $ 5/6 $. Podemos definir a variável aleatória
+
+
+\[Y = \left\{\begin{array}{l}1, \ \text{se obtemos 1 no lançamento do dado}\\0, \ \text{caso contrário}\end{array}\right.\] 	
+
+ 
+
+Neste caso, $ Y\sim \ \text{Bernoulli}(1/6) $ e, se definirmos $ X $ como sendo a variável que representa o número de lançamentos até a obtenção do primeiro sucesso (aparecimento da face 1), temos que $ X \sim \ \text{Geo}(1/6) $. Portanto, se estamos interessados no cálculo da probabilidade de obter $ 1 $ no terceiro lançamento, precisamos calcular $ \mathbb{P}(X = 3) $, ou seja,
+
+
+\[\mathbb{P}(X=3)=(1-p)^2p=\left(1-\frac{1}{6}\right)^2\frac{1}{6}=\left(\frac{5}{6}\right)^2\frac{1}{6}=\frac{5^2}{6^3}\approx 0,09645.\]
+\end{sol}
+\begin{mdframed}[linewidth=0.6pt]
+\textbf{Remark}
+
+	A probabilidade de \textit{n} tentativas serem necessárias para ocorrer um sucesso é:
+	\[\mathbb{P}(X=n) = (1-p)^{j-1}p\]
+
+	a probabilidade de serem necessários \textit{n} insucessos antes do primeiro sucesso é:
+	\[\mathbb{P}(X=n) = (1-p)^{j}p\]
+
+\end{mdframed}
+
+\subsubsection{Exercicios}
+
+\begin{ex}
+	Suponha que a probabilidade de um componente de computador ser defeituoso é de 0,2.  Numa mesa de testes, uma batelada é posta à prova, um a um.  Determine a probabilidade do primeiro defeito encontrado ocorrer no sétimo componente testado.
+\end{ex}
+
+\begin{sol}
+	Estamos interessados em encontrar a probabilidade de serem necessários 6 insucessos até o primeiro sucesso, no caso na sétima tentativa.
+	\[\mathbb{P}(7) = 0,2(1-0,2)^{7-1} = 0,0524\]
+\end{sol}
 \end{document}
