@@ -237,13 +237,15 @@ $\blacksquare$
 \end{flushright}
 \end{sol}
 
-\begin{eg}
+
+\subsubsection{Exercicios}
+\begin{ex}
 	Sabe-se que o número de acidentes de trabalho, por mês, em uma unidade de produção segue uma distribuição de Poisson, com uma média aritmética de 2,5  acidentes de trabalho por mês.
 	\begin{itemize}
-		\item Qual é a probabilidade de que em um determinado mês nenhum acidente de trabalho venha a ocorrer?
-		\item De que pelo menos um acidente de trabalho venha a ocorrer?
+		\item[a)] Qual é a probabilidade de que em um determinado mês nenhum acidente de trabalho venha a ocorrer?
+		\item[b)] De que pelo menos um acidente de trabalho venha a ocorrer?
 	\end{itemize}
-\end{eg}
+\end{ex}
 
 \begin{sol}
 	a) Com $\lambda$ = 2,5
@@ -256,6 +258,33 @@ $\blacksquare$
 		P(C \geq 1) = 1 - P(X = 0) = 1 - 0,0821 = 0,9179
 	\]
 	A probabilidade de que em um determinado mês haverá pelo menos um acidente de trabalho é  0,9179, ou 91,79\%.
+\end{sol}
+
+\begin{ex}
+	Um departamento de polícia recebe em média 5 solicitações por hora.  Qual  a  probabilidade  de  receber  2 solicitações numa hora selecionada aleatoriamente? 
+\end{ex}
+\begin{sol}
+	X = número designado de sucessos = 2 \\
+	$\lambda$ = o número médio de sucessos num intervalo específico (uma hora) = 5 
+	Então temos que:
+	\[P(2) = \frac{e^{-\lambda}\lambda^{X}}{X!}	= \frac{e^{-5}5^{2}}{2!} = 0,084\]
+\end{sol}
+
+\begin{ex}
+	A experiência passada indica que um número médio de 6 clientes por hora param para colocar gasolina numa bomba
+	\begin{itemize}
+		\item[a)] Qual é a probabilidade de 3 clientes pararem qualquer hora? 
+		\item[b)] Qual é a probabilidade de 3 clientes pararem qualquer hora? 
+		\item[c)] Qual é o valor esperado, a média, e o desvio padrão para esta distribuição? 
+	\end{itemize}
+\end{ex}
+\begin{sol}
+	\begin{itemize}
+		\item[a)]X = número designado de sucessos = 3 \\
+		$\lambda$ = o número médio de sucessos num intervalo específico (uma hora) = 6 
+		\[P(2) = \frac{e^{-\lambda}\lambda^{X}}{X!}	= \frac{e^{-6}6^{3}}{3!} = 0,089\]
+		\item[b)]P(X $\leq$ 3) = P(0) + P(1) + P(2) + P(3) 
+	\end{itemize}
 \end{sol}
 
 \end{document}
