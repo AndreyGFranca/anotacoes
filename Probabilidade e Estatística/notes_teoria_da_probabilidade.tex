@@ -403,6 +403,22 @@ Neste caso, $ Y\sim \ \text{Bernoulli}(1/6) $ e, se definirmos $ X $ como sendo 
 	\[\mathbb{P}(7) = 0,2(1-0,2)^{7-1} = 0,0524\]
 \end{sol}
 
+\begin{ex}
+	André deve a Renata R \$130,00. Cada viagem de Renata à casa de André custa R\$50,00 e a probabilidade de André ser encontrado em casa é $\frac{1}{3}$. Se Renata encontrar André, conseguirá cobrar a dívida.
+	\begin{itemize}
+		\item[a)] Qual a probabilidade de Renata ter de ir mais de 3 vezes à casa de André para conseguir cobrar a dívida? 
+		\item[b)] Se na segunda vez em que Renata foi à casa de André ainda não o encontrou, qual a probabilidade de conseguir cobrar na 3a vez?
+	\end{itemize}
+\end{ex}
+
+\begin{sol}
+	\begin{itemize}
+		\item[a)] Estamos interessados em descobrir $\mathbb{P}(X > 3) = 1 - (\mathbb{P}(0) + \mathbb{P}(1) + \mathbb{P}(2) + \mathbb{P}(3))$.
+		
+		
+	\end{itemize}
+\end{sol}
+
 \subsection{ Distribuição Hipergeométrica}
 
 Considere uma população com $ N $ objetos nos quais $ M $ são classificados como do tipo $ A $ e $ N-M $ são classificados como do tipo $ B $. Por exemplo, em um lote de $ 100 $ ($ N $) peças temos $ 10 $ ($ M $) peças defeituosas e $ 90 $ ($ N-M $) peças conformes. Tomamos uma amostra ao acaso, sem reposição e não ordenada de $ n $ objetos. Seja $ X $ a variável aleatória que conta o número de objetos classificados como do tipo $ A $ na amostra. Então a distribuição de probabilidade de $ X $ é dada por:
@@ -434,4 +450,52 @@ sendo $ k $ inteiro e $ \max\{0,n-(N-M)\}\leq k \leq \min\{M,n\} $.
 
 \[\mathbb{P}\left(X=3\right)=\frac{\left(\begin{array}{c}6\\3\end{array}\right)\left(\begin{array}{c}4\\2\end{array}\right)}{\left(\begin{array}{c}10\\5\end{array}\right)}=\frac{10}{21}.\]
 \end{sol}
+
+
+\section{Modelos Probabilisticos Contínuos}
+
+\subsection{Distribuição Uniforme}
+
+\begin{df}Uma variável aleatória $ X $ tem distribuição Uniforme no intervalo $ [a,b] $ se sua função densidade de probabilidade for dada por:
+\end{df}
+
+\[f(x)=\left\{\begin{array}{l} \frac{1}{b-a}, \ \hbox{se} \ a\leq x\leq b;\\ 0, \ \hbox{caso contrário}\end{array}\right.\] 	
+
+
+\begin{obs}
+	Dada uma função de probabilidade  $f(x)$, temos que 
+	\[ \int_{0}^{\infty} f(x)dx = 1 \]
+\end{obs}
+
+\begin{eg}
+	A ocorrência de panes em qualquer ponto de uma rede telefônica de $ 7 $ km foi modelada por uma distribuição Uniforme no intervalo $ [0, 7] $. Qual é a probabilidade de que uma pane venha a ocorrer nos primeiros $ 800 $ metros? E qual a probabilidade de que ocorra nos $ 3 $ km centrais da rede?
+	\begin{sol}
+		A função densidade da distribuição Uniforme é dada por $ f(x)=\frac{1}{7} $ se  $ 0\leq x\leq 7 $ e zero, caso contrário. Assim, a probabilidade de ocorrer pane nos primeiros 800 metros é
+
+\[\mathbb{P}\left(X\leq 0,8\right)=\int_0^{0,8} f(x)dx=\frac{0,8-0}{7}=0,1142.\] 	
+
+e a probabilidade de ocorrer pane nos 3 km centrais da rede é
+
+\[\mathbb{P}\left(2\leq X\leq 5\right)=\int_2^5f(x)dx=\mathbb{P}\left(X\leq 5\right)-\mathbb{P}\left(X\leq 2\right)=5/7-2/7\approx 0,4285.\]
+	\end{sol}
+\end{eg}
+
+\subsubsection{Função Geradora de Momentos, Valor Esperado e Variância.}
+
+O valor esperado de uma variável aleatória $ X $ com distribuição uniforme é dado por
+
+\[\mathbb{E}(X) = \frac{a+b}{2}.\]
+
+\subsubsection{Exercícios}
+
+\begin{ex}
+	Várias linguagens de programação de computadores têm funções que geram números pseudo-aleatórios cuja distrubuição é basicamente uniforme. Se uma função desse tipo gera números entre 0 e 2, qual a probabilidade de um número gerado estar entre 1 e 1,5? Qual a média esperada e o respectivo desvio padrão ?
+	
+	\begin{sol}
+		A função densidade da distribuição Uniforme é dada por $ f(x)=\frac{1}{2} $ se  $ 0\leq x\leq 2 $ e zero, caso contrário. Assim, a probabilidade de ocorrer pane nos primeiros 800 metros é:
+		
+		\[\mathbb{P}(1\leq X \leq 1,5) \]
+	\end{sol}
+\end{ex}
+
 \end{document}
