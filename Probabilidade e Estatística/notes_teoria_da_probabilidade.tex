@@ -10,6 +10,7 @@
 %\small
 \tableofcontents
 \newpage
+
 \section{Espaço Amostral}
 \begin{mdframed}[linewidth=0.6pt]
 \textbf{Remark}\\
@@ -78,7 +79,26 @@ b)B: ocorre número par,\\
 
 \section{Variável Aleatória}
 
-Consideremos um experimento e $ \Omega $ o espaço amostral associado a esse experimento. Uma função X, que associa a cada elemento $ \omega \in \Omega $ um número real, $ X(\omega) $, é denominada variável aleatória (v.a.). Ou seja, variável aleatória é um característico numérico do resultado de um experimento.
+\begin{df}
+	Consideremos um experimento e $ \Omega $ o espaço amostral associado a esse experimento. \emph{ Uma função X, que associa a cada elemento $ \omega \in \Omega $ um número real, $ X(\omega) $,} é denominada variável aleatória (v.a.). Ou seja, variável aleatória é um característico numérico do resultado de um experimento.
+\end{df}
+
+\begin{eg}
+	Considere três lançamentos independentes de uma moeda equilibrada. Seja C cara e K coroa. O espaço amostral deste experimento é S={(C,C,C); (C,C,K); (C,K,C); (K,C,C); (C,K,K); (K,C,K); (K,K,C); (K,K,K)}. Podemos definir a variável aleatória X: "número de caras obtidas nos três lançamentos". Por exemplo, temos que X((C,C,C)) = 3 e X((K,C,C))=2.
+\end{eg}
+
+\subsection{Função de Distribuição Cumulativa}
+
+\begin{df}
+A função de distribuição acumulada de uma variável aleatória X é uma função que a cada número real x associa o valor 
+\[F(x)=\mathbb{P}\left(X\leq x\right), \quad x \in \Bbb{R}.\] 	
+
+A notação $ \{X \leq x\} $ é usada para designar o conjunto $\lbrace \omega \in \Omega :  X(\omega) \leq x\} $, isto é, denota a imagem inversa do intervalo $ (-\infty,x] $ pela variável aleatória X. Com isso, podemos observar que a função de distribuição acumulada $ F $ tem como domínio os números reais $ (\Bbb{R}) $ e imagem o intervalo $ [0,1] $.
+
+O conhecimento da função de distribuição acumulada é suficiente para entendermos o comportamento de uma variável aleatória. Mesmo que a variável assuma valores apenas num subconjunto dos reais, a função de distribuição é definida em toda a reta. Ela é chamada de função de distribuição acumulada, pois acumula as probabilidades dos valores inferiores ou iguais a x.
+\end{df}
+
+
 
 \section{Modelos Probabilísticos Discretos}
 \subsection{Ensaios de Bernoulli}
@@ -499,5 +519,7 @@ O valor esperado de uma variável aleatória $ X $ com distribuição uniforme �
 		\[\mathbb{P}(1\leq X \leq 1,5) \]
 	\end{sol}
 \end{ex}
+
+\section{Processos Estocásticos}
 
 \end{document}
