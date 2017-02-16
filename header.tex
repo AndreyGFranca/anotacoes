@@ -17,5 +17,11 @@
 \newtheorem*{df}{Definição}
 \newtheorem*{obs}{Observação}
 
+\newcounter{x}\setcounter{x}{1}
+\newtheorem{inneraxiom}{Axiom}
+\newenvironment{axiom}[1]
+  {\renewcommand\theinneraxiom{\arabic{x} (#1)}\inneraxiom\stepcounter{x}}
+  {\endinneraxiom}
+
 %commands
 %\renewcommand{\baselinestretch}{1.3} 
