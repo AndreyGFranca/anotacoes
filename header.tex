@@ -10,12 +10,13 @@
 \author{Andrey França}
 
 %theorems
-\theoremstyle{definition}
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section]
 \newtheorem*{eg}{Exemplo}
 \newtheorem*{ex}{Exercício}
 \newtheorem*{sol}{Solução}
-\newtheorem*{df}{Definição}
-\newtheorem*{obs}{Observação}
+\newtheorem{df}[thm]{Definição}
+\newtheorem{obs}[thm]{Observação}
 \newtheorem*{imp}{Implementação}
 
 \newcounter{x}\setcounter{x}{1}
@@ -23,6 +24,5 @@
 \newenvironment{axiom}[1]
   {\renewcommand\theinneraxiom{\arabic{x} (#1)}\inneraxiom\stepcounter{x}}
   {\endinneraxiom}
-
 %commands
 %\renewcommand{\baselinestretch}{1.3} 
