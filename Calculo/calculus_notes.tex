@@ -1,5 +1,6 @@
 \documentclass[10pt,a4paper]{article}
 
+
 \input{../header}
 
 \title{Anotações Calculo}
@@ -15,9 +16,29 @@ Em geral, consideramos as funções para as quais D e E são conjuntos de númer
 \begin{df}
 	Uma \textbf{função} f é uma lei que associa, a cada elemento x em um conjunto D, exatamente um elemento, chamado f(x), em um conjunto E.
 \end{df}
+\subsection*{Representando uma função}
+\begin{multicols}{2}
+\begin{tikzpicture}[xscale=0.75,yscale=0.75]
+	\begin{axis}[%
+		samples = 50,
+		axis x line = center,
+		axis y line = center,
+		xlabel = {$x$},
+		ylabel = {$y$},
+		ticks=none,
+	]
+	\addplot[black] {x^2}  node[pos=.70,right] {$y=x^{2}$};
+	\end{axis}
+\end{tikzpicture}
 
-\begin{obs}
-	sdfasdfasdf adsfasdfasdfsadfasdf  asdfasdf
-\end{obs}
+\columnbreak
+É possível representar uma função de quatro maneiras:
+\begin{itemize}
+	\item[•]verbalmente
+	\item[•]numericamente
+	\item[•]visualmente
+	\item[•]algebricamente
+\end{itemize}
 
+\end{multicols}
 \end{document}
