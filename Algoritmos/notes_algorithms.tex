@@ -9,6 +9,13 @@
 \tableofcontents
 \newpage
 
+\section{Introdução}
+Informalmente, um algoritmo é qualquer procedimento computacional bem definido que toma algum valor ou conjunto de valores como entrada e produz algum valor ou conjunto de valores como saída. Portanto, um algoritmo é uma sequência de passos computacionais que transformam a entrada na saída.\\\\
+\textbf{Estrutura de Dados}
+
+Uma estrutura de dados é um meio para armazenar e organizar dados com o objetivo de facilitar o acesso ou as modificações. Nenhuma estrutura de dados única funciona bem para todos os propósitos, e assim é importante conhecer os pontos fortes e as limitações de várias delas.
+
+\subsection{Eficiência}
 \section{Estrutura de Dados}
 
 \subsection{Listas}
@@ -38,7 +45,56 @@
 
 
 \section{Algoritmos de Ordenação}
+Algoritmos de ordenação são algoritmos que colocam elementos de uma lista em uma certa ordem. Algoritmos de ordenação eficientes são importantes para otimizar o uso de outros algoritmos (como busca por exemplo). Algoritmos de ordenção são geralmente  classificados por:
+
+\begin{itemize}
+	\item[•] Complexidade;
+	\item[•] Memória;
+	\item[•] Estabilidade;
+\end{itemize}
+
+
 \subsection{Selection Sort}
+A ordenação por seleção (do inglês, selection sort) é um algoritmo de ordenação baseado em se passar sempre o menor valor do vetor para a primeira posição (ou o maior dependendo da ordem requerida), depois o de segundo menor valor para a segunda posição, e assim é feito sucessivamente com os \textit{n-1} elementos restantes, até os últimos dois elementos.
+
+\begin{ex}
+	Escreva uma função que verifique se um vetor v[0..n-1] está em ordem crescente.
+	\begin{eg}
+		Para isto basta criar uma função que percorre todo vetor \code{arr} verificando se o elemento \code{arr[i + 1] < arr[i]}, caso o encontre algum elemento que não se encaixe nessa comparação, então retornaremos falso, isto é, o vetor não esta em orden crescente.
+	\end{eg}
+\end{ex}
+\begin{lstlisting}[language=C++, caption={Verificar se um vetor está em ordem crescente}]
+bool verifica_ordem(int arr[], int len){
+	for (int i = 0; i < len; i++){
+		if (arr[i] < arr[i+1]) continue;
+		else return false;
+	}   			
+	return true;
+}
+		\end{lstlisting}
+\subsubsection{Complexidade}
+O Selection Sort compara a cada interação um elemento com os outros, visando encontrar o menor. Dessa forma, podemos entender que não existe um melhor caso mesmo que o vetor esteja ordenado ou em ordem inversa serão executados os dois laços do algoritmo, o externo e o interno. A complexidade deste algoritmo será sempre $ \mathcal{O}(n^{2})$ enquanto que, por exemplo, os algoritmos Heapsort e Mergesort possuem complexidades $\mathcal{O}(n\log{}n)$.
+
+\subsubsection{Implementação}
+
+\begin{lstlisting}[language=C++, caption={Selection Sort implemetação}]
+void selection_sort(int num[], int tam) { 
+	int i, j, min, aux;
+  	for (i = 0; i < (tam-1); i++) 
+  	{
+     	min = i;
+     	for (j = (i+1); j < tam; j++) {
+       		if(num[j] < num[min]) 
+         	min = j;
+     	}
+     	if (i != min) {
+       		aux = num[i];
+       		num[i] = num[min];
+       		num[min] = aux;
+     	}
+  	}
+}
+\end{lstlisting}
 \subsection{Insertion Sort}
 \subsection{Bubble Sort}
 \subsection{Merge Sort}
