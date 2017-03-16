@@ -5,8 +5,8 @@
 - [ ] Desenvolvimento Ágil
 - [ ] UML
     - [x] Introdução
-    - [ ] Diagrama de Caso de Uso
-    - [ ] Diagrama de Classe
+    - [x] Diagrama de Caso de Uso
+    - [x] Diagrama de Classe
     - [ ] Diagrama de objetos
     - [ ] Diagrama de Pacotes
     - [ ] Diagrama de Sequência
