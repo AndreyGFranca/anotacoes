@@ -60,13 +60,3 @@ São utilizadas para descrever cenários opcionais de um caso de uso. Os casos d
 Na imagem acima o caso de uso autoregistrar há uma associação de extensão  com o caso de uso realizar login, isto significa que autoregistrar poderá ser chamado a partir de realizar login.
 
 Uma boa prática é colocar uma nota explicativa em um relacionamento de extensão, com o texto entre chaves.
-
-
-# Exercicios
-
-**Ex 01** - construa o modelo de casos de uso para a seguinte situação. Tente identificar também regras de negócio que se apliquem à situação, de acordo com o texto fornecido.
-Uma rede de televisão está requisitando um sistema para gerenciar informações sobre uma de suas produções televisivas (por exemplo, uma minissérie ou uma novela).
-Uma produção televisiva tem uma verba e é composta de cenas. Cenas são escolhidas em uma determinada seqüência. Cada cena tem uma duração em minutos e é gravada em uma ou mais fitas. Cada fita possui um número de série e uma capacidade (medida em minutos que podem ser gravados na mesma). Deseja-se saber em que fita(s) se encontra uma determinada cena. Cada cena pode ter sido gravada muitas vezes (futuramente, na edição da obra, o produtor selecionará uma dessas tomadas de cena para compor a versão final da produção televisiva). Deve-se manter o registro de todas as cenas filmadas, de quais atores e dublês participaram de cada cena. Deseja-se saber também, que dublê substituiu que ator em cada cena.
-Para uma produção televisiva como um todo, deseja-se manter a informação de quais outros funcionários, os chamados funcionários de apoio, participaram das filmagens. Esses funcionários podem ser de diversos tipos (câmeras, iluminadores, contra-regras etc.). Além disso, pode haver funcionários de apoio que exerçam mais de uma função na mesma produção televisiva.
-Atores e dublês negociam seus salários individualmente, em cada produção televisiva em que participam. Os demais funcionários têm um salário fixo por função. É necessário também armazenar essas informações para ter uma idéia do consumo de recursos em relação à verba.
-Após o término de uma obra, o sistema deve produzir um relatório com o valor a ser pago para cada funcionário. O sistema também deve produzir um relatório de informações sobre as cenas de uma obra televisiva, e sobre que atores, dublês e demais funcionários participaram dessa obra televisiva.
