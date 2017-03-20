@@ -46,6 +46,12 @@ Uma Gaveta pode conter Meias, mas a Gaveta não é feita de Meias. Ou seja, mesm
 Uma associação do tipo composição constitui-se em uma variação da agregaçã, onde é apresentado um vínculo mais forte entre o objeto-todo e o objeto-parte, procurando demonstrar que os objetos-parte têm de estar associado a um único objeto-todo. Em suma, É quando um objeto é formado por outros objetos. Ou seja, suas partes o compõem, sem elas o objeto não existe  
 ![](https://i.stack.imgur.com/WiZCk.png)
 
+Veja a imagem abaixo:
+![](imgs/img011.png)
+Nesta imagem é possível perceber que um objeto da classe Revista_Cientifica refere-se a no mínimo, um objeto da classe Edicao, podendo se referir a muitos objetos desta classe, e que cada instância da classe **Edicao relaciona-se única e exclusivamente** a uma instância especifica da classe **Revista_Cientifica, não podendo relacionar-se com nenhuma outra.**
+
 # Generalização/Especialização
 Como no diagrama de caso de uso, a generalização/especialização ocorre quando existe duas ou mais classes com características muito semelhantes. Assim, para evitar ter de declarar atributos e/ou métodos idênticos e como uma forma de reaproveitar código, cria-se uma classe geral em que são declarados os atributos comuns a todas as classes envolvidas no projeto.
 ![](imgs/img010.png)
+
+# Esteriotipos do Diagrama de Classe
