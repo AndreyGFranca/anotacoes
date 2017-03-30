@@ -1,0 +1,70 @@
+\documentclass[10pt,a4paper]{article}
+
+\input{../header.tex}
+
+%% Informações do Documento
+\author{Andrey França}
+\title{Anotações Algoritmos}
+\date{\today}
+\begin{document}
+
+\maketitle
+
+\begin{quote}
+
+	"Ao verificar que um dado programa está muito lento, uma pessoa prática pede uma 
+	máquina mais rápida ao seu chefe, mas o ganho potencial que uma máquina mais 
+	rápida pode proporcionar é tipicamente limitado por um fator de 10 por razões 
+	técnicas ou econômicas. Para obter um ganho maior, é preciso buscar melhores 
+	algoritmos. Um bom algoritmo, mesmo rodando em uma máquina lenta,sempre acaba 
+	derrotando (para instâncias grandes do problema) um algoritmo pior rodando em 
+	uma máquina rápida. Sempre."
+	
+	\begin{flushright}
+		-S. S. Skiena, The Algorithm Desig
+	\end{flushright}
+	
+\end{quote}
+
+\section{Introdução}
+
+Na área de análise de algoritmos, existem dois tipos de problemas bem distintos, conforme apontou Knuth (1971):
+
+\begin{itemize}
+
+	\item[(i)] \textbf{Análise de um algoritmo particular:} Qual é um custo de um dado algoritmo
+	 para resolver um problema específico? Neste  caso características importantes do
+	  algoritmo em questão devem ser investigadas.  Geralmente faz se a análise do 
+	  número de vezes em que cada parte do algoritmo é executada.
+	  
+	 \item[(ii)] \textbf{Análise de uma classe de algoritmos:} Qual é o algoritmo de menor custo
+	  possível para resolver um problema em particular? Analisa-se uma família de algoritmos
+	   e escolhe-se o mais adequado para realizar aquele problema em particular.
+	   
+\end{itemize}
+
+
+O custo de utilização de um algoritmo pode ser medido de várias maneiras. Uma delas é mediante
+ execução do programa em um computador real, sendo o tempo de execução medido diretamente.
+
+\textbf{Desvantagens}:
+
+\begin{itemize}
+	
+	\item[(i)] os resultados são dependentes do compilador;
+	
+	\item[(ii)] os resultados dependem de hardware;
+	
+	\item[(iii)] quando grandes quantidades de memória são utilizadas, as medidas de tempo 
+	podem depender desse aspecto;
+\end{itemize}
+
+Apesar disso, em algumas situações são favoráveis utilizar medidas reais, por exemplo, quando 
+existem vários algoritmos distintos para resolver o mesmo tipo de problema, todos com um custo
+de execução dentro da mesma ordem de grandeza.
+
+Uma forma mais adequada de medir o custo de utilização de um algoritmo é por meio do uso de 
+um modelo matemático baseado em um computador idealizado, por exemplo, o computador MIX 
+proposto por Knuth(1968). 
+
+\end{document}
